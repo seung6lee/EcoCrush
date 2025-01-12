@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style_quiz.css">
+    <title>Electricity Literacy Quiz</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="top-bar" style="z-index: 10;">
+        <div class="heart-icon"></div>
+        <div class="heart-bar"><div class="heart-bar-text">4/5</div></div>
+        <div class="energy-point-icon"></div>
+        <div class="energy-point-bar"><div class="energy-point-bar-text">470,920</div></div>
+        <div class="profile-picture"></div>
+        <div class="school-bar"></div>
+        <div class="school-icon"></div>
+        <div class="energy-ranking">Diamond II</div>
+        <div class="energy-tier-icon"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-title">EcoQuest 
+            Daily Quiz</div>
+        <div class="question">Which tile below scores the highest energy point?</div>
+        <div class="choices">
+            <div class="choice" data-correct="false">Lightbulb</div>
+            <div class="choice" data-correct="false">Wifi</div>
+            <div class="choice" data-correct="true">A/C</div>
+            <div class="choice" data-correct="false">Air Purifier</div>
+            <div class="choice" data-correct="false">Charger</div>
+        </div>
+        <div class="reward" id="reward">Correct! Great job!</div>
+        <div class="reward" style="color: red;" id="incorrect">Incorrect, Try Again Tomorrow!</div>
+        <button class="failbutton event-tab-playbox" id="returnbutton"onclick="window.location.href='./event.html';">Return</button>
+        <button class="failbutton event-tab-playbox" id="rewardbutton"onclick="window.location.href='./event.html';">Claim 1 Booster</button>
+    </div>
+
+    <script>
+        const choices = document.querySelectorAll('.choice');
+        const reward = document.getElementById('reward');
+        const incorrect = document.getElementById('incorrect');
+        const returnbutton = document.getElementById('returnbutton');
+        const rewardbutton = document.getElementById('rewardbutton')
+
+
+        choices.forEach(choice => {
+            choice.addEventListener('click', () => {
+                if (!reward.style.display && !incorrect.style.display) {
+                    if (choice.getAttribute('data-correct') === 'true') {
+                        reward.style.display = 'block';
+                        rewardbutton.style.display = 'block';
+                    } else {
+                        incorrect.style.display = 'block';
+                        returnbutton.style.display = 'block';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

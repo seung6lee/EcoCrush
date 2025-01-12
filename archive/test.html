@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode Race</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdd1f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 350px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: center;
+        }
+        .header {
+            background: #ff97cb;
+            border-radius: 15px;
+            padding: 10px;
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .bar {
+            height: 20px;
+            width: 100%;
+            background: #f7cce8;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .progress {
+            height: 100%;
+            width: 80%; /* Adjust for progress */
+            background: #ff5ba1;
+            border-radius: 10px;
+        }
+        .finish-line {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            font-size: 0.8em;
+            color: black;
+            display: flex;
+            align-items: center;
+        }
+        .finish-line img {
+            height: 20px;
+            margin-left: 5px;
+        }
+        .player-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px;
+            background: #f7e3f3;
+            border-radius: 10px;
+        }
+        .player-row.me {
+            background: #fdb1e0;
+        }
+        .avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .avatar img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .points {
+            font-weight: bold;
+        }
+        .reward {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .reward img {
+            height: 20px;
+            margin-left: 5px;
+        }
+        .play-button {
+            background: #ff5ba1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .play-button:hover {
+            background: #e04d91;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Episode Race</div>
+        <p>Be the fastest to reach the finish line to win the best prize!</p>
+        <div class="bar">
+            <div class="progress"></div>
+            <div class="finish-line">
+                <span>12815</span>
+                <img src="finish-line.png" alt="Finish Line">
+            </div>
+        </div>
+        <div class="player-row">
+            <div class="avatar">
+                <img src="player1.png" alt="Player 1">
+            </div>
+            <div class="points">12815</div>
+            <div class="reward">
+                <img src="trophy.png" alt="Trophy"> 15
+            </div>
+        </div>
+        <div class="player-row">
+            <div class="avatar">
+                <img src="player2.png" alt="Player 2">
+            </div>
+            <div class="points">12000</div>
+            <div class="reward">
+                <img src="gold.png" alt="Gold"> 5
+            </div>
+        </div>
+        <div class="player-row me">
+            <div class="avatar">
+                <img src="me.png" alt="Me">
+            </div>
+            <div class="points">10000</div>
+            <div class="reward">
+                <img src="gold.png" alt="Gold"> 1
+            </div>
+        </div>
+        <div class="player-row">
+            <div class="avatar">
+                <img src="player3.png" alt="Player 3">
+            </div>
+            <div class="points">8000</div>
+            <div class="reward">
+                <img src="gold.png" alt="Gold"> 1
+            </div>
+        </div>
+        <button class="play-button">Play!</button>
+    </div>
+</body>
+</html>

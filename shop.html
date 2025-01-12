@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style_shop.css">
+    <title>Shopping Mall App</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="top-bar" style="z-index: 10;">
+        <div class="heart-icon"></div>
+        <div class="heart-bar"><div class="heart-bar-text">4/5</div></div>
+        <div class="energy-point-icon"></div>
+        <div class="energy-point-bar"><div class="energy-point-bar-text">470,920</div></div>
+        <div class="profile-picture"></div>
+        <div class="school-bar"></div>
+        <div class="school-icon"></div>
+        <div class="energy-ranking">Diamond II</div>
+        <div class="energy-tier-icon"></div>
+    </div>
+    <div>
+        <div class="header">Welcome to EcoQuest&NZ@S Shop!</div>
+        <div class="products">
+            <div class="product" data-name="Product 1" data-price="10">
+                <img src="https://via.placeholder.com/150" alt="Product 1">
+                <div class="product-title">Product 1</div>
+                <div class="product-price">10 M.EP</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Product 2" data-price="20">
+                <img src="https://via.placeholder.com/150" alt="Product 2">
+                <div class="product-title">Product 2</div>
+                <div class="product-price">20 M.EP</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Product 3" data-price="15">
+                <img src="https://via.placeholder.com/150" alt="Product 3">
+                <div class="product-title">Product 3</div>
+                <div class="product-price">15 M.EP</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-name="Product 4" data-price="25">
+                <img src="https://via.placeholder.com/150" alt="Product 4">
+                <div class="product-title">Product 4</div>
+                <div class="product-price">25 M.EP</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="cart">
+            <div class="cart-title">Shopping Cart</div>
+            <div class="cart-items" id="cart-items"></div>
+            <button class="checkout" id="checkout-button">Checkout</button>
+        </div>
+        <div style="height: 150px;"></div>
+    </div>
+
+    <div class="tabs" style="z-index: 10;">
+        <button class="tab" id="map-tab" onclick="window.location.href='./map.html';">
+            <div class="maps"></div>
+            <div class="tab-text">MAP</div>
+        </button>
+        <button class="tab" id="event-tab" onclick="window.location.href='./event.html';">
+            <div class="event"></div>
+            <div class="tab-text">EVENT</div>
+        </button>
+    </div>
+    
+
+    <script>
+        const cartItemsContainer = document.getElementById('cart-items');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const checkoutButton = document.getElementById('checkout-button');
+        const cart = [];
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.parentElement;
+                const name = product.getAttribute('data-name');
+                const price = parseFloat(product.getAttribute('data-price'));
+
+                cart.push({ name, price });
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `<span>${item.name}</span><span>${(item.price).toFixed(2)} M.EP</span>`;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        checkoutButton.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Thank you for your purchase!');
+                cart.length = 0;
+                updateCart();
+            }
+        });
+    </script>
+</body>

@@ -1,0 +1,411 @@
+/* 
+
+TODO
+
+button font update
+
+
+
+
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: rgb(12, 149, 12);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 30%;
+    background-color: #ddd;
+    position: relative;
+    background-image: url(./images/topbar-profile_pic.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.top-bar .heart-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    background-color: transparent;
+    top: 11px;
+    left: 10px;
+    position: absolute;
+    z-index: 10;
+    background-image: url(./images/topbar-heart_icon.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.top-bar .heart-bar {
+    
+    font-family: monospace;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    color: rgb(7, 62, 52);
+    font-weight:bold;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    height: 35px;
+    width: 90px;
+    background-color: #ddd;
+    border-radius: 20px;
+}
+.top-bar .heart-bar .heart-bar-text{
+    position: absolute;
+    left: 38px;
+    font-size: 20px;
+
+}
+
+.top-bar .energy-point-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 30%;
+    background-color: transparent;
+    top: 60px;
+    left: 5px;
+    position: absolute;
+    z-index: 10;
+    background-image: url(./images/topbar-energy_point_icon.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.top-bar .energy-point-bar {
+    font-size: 20px;
+    font-family: monospace;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    color: rgb(7, 62, 52);
+    font-weight:bold;
+    position: absolute;
+    top: 65px;
+    left: 26px;
+    height: 35px;
+    width: 140px;
+    background-color: #ddd;
+    border-radius: 20px;
+}
+
+.top-bar .energy-point-bar .energy-point-bar-text{
+    position: absolute;
+    left: 38px;
+    font-size: 20px;
+
+}
+
+.top-bar .school-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    background-color: transparent;
+    top: 27.5px;
+    right: 35px;
+    position: absolute;
+    z-index: 10;
+    background-image: url(./images/topbar-school_icon.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.top-bar .energy-tier-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 30%;
+    background-color: transparent;
+    top: 15px;
+    right: 80px;
+    position: absolute;
+    z-index: 10;
+    background-image: url(./images/topbar-energy_tier.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.top-bar .energy-ranking {
+    font-family: monospace;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    color: rgb(7, 62, 52);
+    font-weight:bold;
+    width: 110px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 17px;
+    background-color: transparent;
+    top: 75px;
+    right: 35px;
+    position: absolute;
+    z-index: 10;
+    
+}
+
+.top-bar .school-bar {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    height: 80px;
+    width: 130px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.top-bar .bar:first-child {
+    top: calc(50% - 25px);
+    left: -120px;
+}
+
+.top-bar .bar:last-child {
+    top: calc(50% + 15px);
+    left: -120px;
+}
+
+.content {
+    flex: 1;
+    /* padding: 20px; */
+    overflow-y: auto;
+}
+
+.tabs {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: green;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+    border: none;
+    margin: auto;
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: white;
+    /* text-align: center; */
+    display: flex; flex-direction: column; justify-content: flex-end; height: 100%;
+    /* font-size: 30px; */
+    background-color: green;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+
+.tab.active {
+    background-color: rgb(2, 177, 2);
+    color: white;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+    height: 100%;
+    text-align: center;
+}
+
+.tab-text {
+    margin: auto;
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    top: 10px;
+    text-align: center;
+    display: flex; flex-direction: column; justify-content: flex-end; height: 100%;
+    font-size: 30px;
+    /* background-color: green; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.map-background {
+    height: 200vh; 
+    background-image: url(./images/map-background2.png); 
+    background-size: 100% auto; 
+    background-repeat: no-repeat; 
+    background-position: bottom; 
+    overflow-y: scroll;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+}
+
+.stage-button {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(77, 153, 73);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin-top: 120px; 
+    margin-left: auto; 
+    margin-right: auto;
+    border: none;
+}
+
+.stage-button-text {
+    margin: 0; 
+    font-size: 40px; 
+    color: rgb(255, 255, 255);
+}
+
+.tab .maps {
+    width: 120px;
+    height: 100px;
+    background-color: transparent;
+    bottom: 45px;
+    left: 55px;
+    position: absolute;
+    z-index: 10;
+    background-image: url(./images/bottombar-maps.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.tab .event {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    bottom: 45px;
+    right: 35px;
+    position: absolute;
+    z-index: 10;
+    background-image: url(./images/bottombar-events.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.event-tab {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(188, 225, 206); 
+    width: 85%; 
+    height: 70%; 
+    margin: auto; 
+    border-radius: 30px;
+}
+
+.event-daily-quiz {
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    position: relative;
+    bottom: 40px;
+    background-image: url(./images/event-daily_quiz.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+
+
+.event-weekly-race {
+    width: 180px;
+    height: 180px;
+    border-radius: 30%;
+    position: relative;
+    bottom: 40px;
+    background-image: url(./images/event-weekly_race.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.event-monthly-energy-tier {
+    width: 160px;
+    height: 160px;
+    border-radius: 30%;
+    position: relative;
+    bottom: 40px;
+    background-image: url(./images/topbar-energy_tier.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.event-nzas-shop {
+    width: 160px;
+    height: 160px;
+    border-radius: 30%;
+    position: relative;
+    bottom: 40px;
+    background-image: url(./images/event-nzas_icon.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+.event-tab-textbox {
+    position:absolute;
+    bottom: 70px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center; 
+    margin-top: 10px; 
+    color: rgb(7, 62, 52);
+
+}
+
+
+
+.event-tab-playbox {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    bottom: 20px;
+    font-size: 25px;
+    background-color: green;
+    font-family: monospace;
+    text-align: center; 
+    color: rgb(249, 249, 249);
+    height: 40px;
+    width: 130px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.event-tab-playbox:hover {
+    background-color: darkgreen;
+}
+
+/* 
+#map-content, #event-content {
+    display: none;
+}
+
+#map-content.active, #event-content.active {
+    display: block;
+} */

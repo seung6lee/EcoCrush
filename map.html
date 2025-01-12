@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Map and Event Tabs</title>
+</head>
+<style>
+    #map-content div::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+</style>
+<body>
+
+    <div class="top-bar" style="z-index: 10;">
+        <div class="heart-icon"></div>
+        <div class="heart-bar"><div class="heart-bar-text">4/5</div></div>
+        <div class="energy-point-icon"></div>
+        <div class="energy-point-bar"><div class="energy-point-bar-text">470,920</div></div>
+        <div class="profile-picture"></div>
+        <div class="school-bar"></div>
+        <div class="school-icon"></div>
+        <div class="energy-ranking">Diamond II</div>
+        <div class="energy-tier-icon"></div>
+    </div>
+
+    <div class="content active" id="map-content">
+        <div class="map-background">
+            <button class="stage-button" onclick="window.location.href='./candyCrush.html?level=1';">
+                <h1 class="stage-button-text">1</h1>
+            </button>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=2';">
+                <h1 class="stage-button-text">2</h1>
+            </div>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=3';">
+                <h1 class="stage-button-text">3</h1>
+            </div>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=4';">
+                <h1 class="stage-button-text">4</h1>
+            </div>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=5';">
+                <h1 class="stage-button-text">5</h1>
+            </div>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=6';">
+                <h1 class="stage-button-text">6</h1>
+            </div>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=7';">
+                <h1 class="stage-button-text">7</h1>
+            </div>
+            <div class="stage-button" onclick="window.location.href='./candyCrush.html?level=8';">
+                <h1 class="stage-button-text">8</h1>
+            </div>
+
+            
+        </div>
+        
+    </div>
+    </div>
+    
+
+
+    <div class="tabs" style="z-index: 10;">
+        <button class="tab active" id="map-tab">
+            <div class="maps"></div>
+            <div class="tab-text">MAP</div>
+        </button>
+        <button class="tab" id="event-tab" onclick="window.location.href='./event.html';">
+            <div class="event"></div>
+            <div class="tab-text">EVENT</div>
+        </button>
+    </div>
+</body>
+</html>

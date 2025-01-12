@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoQuest Loading Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2a5834;
+            color: white;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .subtitle {
+            font-size: 25px;
+            /* font-weight: bold; */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+        }
+
+        .loading-bar-container {
+            width: 80%;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #4caf50;
+            transition: width 0.5s ease;
+        }
+
+        .play-button {
+            display: none;
+            margin-top: 40px;
+            padding: 20px 40px;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .play-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">EcoQuest</div>
+    <div class="subtitle">Play a Greener Tomorrow</div>
+    <div class="loading-bar-container">
+        <div class="loading-bar" id="loading-bar"></div>
+    </div>
+    <button class="play-button" id="play-button">Play</button>
+
+    <script>
+        const loadingBar = document.getElementById('loading-bar');
+        const playButton = document.getElementById('play-button');
+
+        let loadingProgress = 0;
+        const loadingInterval = setInterval(() => {
+            if (loadingProgress < 100) {
+                loadingProgress += Math.random()*20;
+                loadingBar.style.width = loadingProgress + '%';
+            } else {
+                clearInterval(loadingInterval);
+                playButton.style.display = 'block';
+            }
+        }, 500);
+
+        playButton.addEventListener('click', () => {
+            // alert('Game Starting!');
+            // Redirect to the game or main page
+            window.location.href = './map.html';
+        });
+    </script>
+</body>
+</html>

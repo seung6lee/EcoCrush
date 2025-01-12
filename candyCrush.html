@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
+        <title>Game</title>
+
+        <link rel="stylesheet" href="./candyCrush.css" />
+        <script src="./candyCrush.js"></script>
+    </head>
+    <body>
+        <button onclick="window.location.href='./map.html';" id="back">
+            <img src="./images/back.png" />
+        </button>
+
+        <div id="info">
+            <h1 id="limit"></h1>
+            <div id="status-box">
+                <div id="eer-box">
+                    <img src="./images/eer/5.png" alt="" width="60px" id="eer-logo">
+                    <progress id="eer" max="5" value="5"></progress>
+                </div>
+
+                <div id="sbp-box">
+                    <img alt="" width="60px" id="sbp-logo">
+                    <progress id="sbp" value="0"></progress>
+                </div>
+            </div>
+            <div id="elec-box">
+                <img src="./images/lightning.png" id="elec-logo">
+                <progress id="score" max="5000" value="5000"></progress>
+            </div>
+        </div>
+        <div id="game"></div>
+    </body>
+</html>
